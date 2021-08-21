@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import colors from './lib/colors';
 
-export default function App() {
+import InputScreen from './lib/screens/inputScreen';
+import Constants from 'expo-constants';
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <InputScreen />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: colors.scaffoldBg,
+    paddingTop:Constants.statusBarHeight
   },
 });
+
+export default App;
